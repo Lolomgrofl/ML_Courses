@@ -1,7 +1,7 @@
 import pandas as pd
-
+# from Models.Experiment import Experiment
 from Data_preprocessing.Data_aggregation import DataAggregation
-
+import matplotlib.pyplot as plt
 
 df_assessments = pd.read_csv('data/assessments.csv')
 df_courses = pd.read_csv('data/courses.csv')
@@ -26,4 +26,4 @@ if __name__ == '__main__':
     da = DataAggregation()
     df = da.transform(df_studentVle, ind, cols, vals, aggs)
 
-    print(df.head())
+    print(df.head(5))
