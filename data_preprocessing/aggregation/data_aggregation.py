@@ -1,5 +1,6 @@
 import pandas as pd
-from Data_preprocessing.Missing_values.Missing_values import TransformMissingValues, StrategyTransform
+
+from .aggregation.missing_values import TransformMissingValues, StrategyTransform
 
 
 class DataAggregation:
