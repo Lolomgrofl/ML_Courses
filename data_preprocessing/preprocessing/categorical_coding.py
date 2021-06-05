@@ -13,7 +13,7 @@ class DummyCoding:
     
     def fit(self, X, columns):
         self.columns = columns
-        self.values = [np.unique(X[x]) for x in self.columns]
+        self.values = [X[x].unique().tolist() for x in self.columns]
         
     def transform(self, X, append=True):
         df = X.copy()
@@ -24,4 +24,5 @@ class DummyCoding:
             for j in self.values[i]:
                 df[f'{self.columns[i]}_{j}'] = (X[f'{self.columns[i]}'] == j).astype(int)
         
+        df = df.drop(self.columns, axis=1)
         return df
